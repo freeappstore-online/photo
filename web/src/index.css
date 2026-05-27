@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --color-accent: #ec4899;
+  --color-paper: #fefdfb;
+  --color-ink: #1a1917;
+  --color-muted: #8a8780;
+  --color-line: #e8e5e0;
+  --color-panel: #f5f3f0;
+  --radius-card: 1.25rem;
+  --radius-btn: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: #0f0f0e;
+    --color-ink: #f2f0ed;
+    --color-muted: #7a7770;
+    --color-line: #2a2825;
+    --color-panel: #1a1918;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  font-family: var(--font-body);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+h1, h2, h3 { font-family: var(--font-display); }
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: var(--color-line);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-paper);
+  box-shadow: 0 0 0 1px var(--color-line);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-paper);
+  box-shadow: 0 0 0 1px var(--color-line);
+}
+
+input[type="number"],
+input[type="text"] {
+  font-family: var(--font-body);
+  background: var(--color-panel);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-btn);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+  border-color: var(--color-accent);
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 3px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}

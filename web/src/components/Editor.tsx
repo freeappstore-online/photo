@@ -15,6 +15,7 @@ import type {
   Layer,
   StickerLayer,
   TextLayer,
+  Tool,
 } from "../types";
 import {
   drawLayers,
@@ -30,15 +31,7 @@ interface Props {
   adjustments: Adjustments;
   layers: Layer[];
   setLayers: (l: Layer[]) => void;
-  tool:
-    | "adjust"
-    | "presets"
-    | "crop"
-    | "transform"
-    | "text"
-    | "draw"
-    | "stickers"
-    | "export";
+  tool: Tool;
 
   // crop
   crop: CropRect | null;
